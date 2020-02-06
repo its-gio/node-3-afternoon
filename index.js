@@ -4,7 +4,11 @@ const express = require('express');
 const massive = require('massive');
 
 const app = express();
-const {SERVER_PORT} = process.env;
+const {SERVER_PORT, CONNECTION_STRING} = process.env;
+
+massive(CONNECTION_STRING)
+  .then(db =>  app.set("db", db))
+  .catch(err => console.error(err))
 
 app
   .use(express.json())
