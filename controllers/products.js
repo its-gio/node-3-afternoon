@@ -26,10 +26,10 @@ module.exports.getAll = (req, res) => {
 
 module.exports.updateItem = (req, res) => {
   const { id } = req.params;
-  const { description } = req.body;
+  const { desc } = req.query;
   const db = req.app.get("db");
 
-  db.update_product(id, description)
+  db.update_product(id, desc)
     .then(() => res.sendStatus(200))
     .catch(err => console.error(err));
 }

@@ -14,10 +14,10 @@ massive(CONNECTION_STRING)
   .catch(err => console.error(err))
 
 app
-  .post("/api/product", create)
-  .get("/api/product/", getAll)
-  .get("/api/product/:id", getOne)
-  .put("/api/product/:id", updateItem)
-  .delete("/api/product/:id", deleteItem)
+  .post("/api/products", create)
+  .get("/api/products/", getAll)
+  .get("/api/products/:id", getOne)
+  .put("/api/products/:id", updateItem)
+  .delete("/api/products/:id", deleteItem)
 
 app.listen(SERVER_PORT, () => console.log(`Guess who's back?`))
